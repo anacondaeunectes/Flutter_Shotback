@@ -1,5 +1,5 @@
-name: primer_acercamiento
-description: A new Flutter application.
+name: ShotBack
+description: This is a getting in touch Flutter proyect that consists on two views. The first shows a list of cards containing a bunch of images. Once you tap one, you get to the second view where the image is ampliated and its shown detailed information like location, date, a description, people you were with, etc...
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
