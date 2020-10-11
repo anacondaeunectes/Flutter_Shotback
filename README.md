@@ -1,6 +1,6 @@
-# primer_acercamiento
+# ShotBack
 
-A new Flutter application.
+This is a getting in touch Flutter proyect that consists on two views. The first shows a list of cards containing a bunch of images. Once you tap one, you get to the second view where the image is ampliated and its shown detailed information like location, date, a description, people you were with, etc... 
 
 ## Getting Started
 
