@@ -1,26 +1,25 @@
-import 'dart:io';
-
-import 'package:ShotBack/image.dart';
+import 'package:ShotBack/forms.dart';
 import 'package:flutter/material.dart';
 
 final String ejemplo =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacus erat, scelerisque sit amet aliquet in, varius vitae diam. Vestibulum tempus ultrices justo, et scelerisque lectus tincidunt non. Aenean sit amet tortor et elit molestie rhoncus in eu purus. Etiam non sagittis lacus. Pellentesque hendrerit, risus ac volutpat cursus, lacus velit malesuada enim, eget ullamcorper velit elit consequat ante. Proin facilisis auctor augue eu bibendum. Quisque sed bibendum ipsum, ut commodo nunc. Pellentesque aliquet nisl nec diam ornare, in lobortis velit molestie. In ultricies purus non libero efficitur, id tempor magna maximus.";
 
 void main() {
-  // runApp(MainScreen());
-  runApp(MyApp());
+  runApp(MaterialApp(
+    title: "ShotBack",
+    home: MainScreen()
+  ));
+  // runApp(MyApp());
 }
 
 //Vista principal de la aplicacion.
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(   //Otorga el estilo de MaterialDesign
-      title: 'ShotBack',
-      home: Scaffold(     //Scaffold que contiene el appBar y el body de la vista  
+    return Scaffold(     //Scaffold que contiene el appBar y el body de la vista  
         backgroundColor: Colors.lime,
         appBar: AppBar(
-            title: Text("Galería de imágenes"), backgroundColor: Colors.green),
+            title: Center(child: Text("Shotback")), backgroundColor: Colors.green),
         body: ListView(   //El body se trata de un ListView de Cards que muestran una imagen y su titulo
           children: <Widget>[
             ShotbackCard(Shotback(
@@ -46,8 +45,18 @@ class MainScreen extends StatelessWidget {
                 "Japan"))
           ],
         ),
-      ),
-    );
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add_photo_alternate_outlined), backgroundColor: Colors.green,
+          tooltip: "Agregar nueva imagen",
+          onPressed: () {
+              // Formulario.showFormulario(context);
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Formulario()));
+
+          }),
+      );
   }
 }
 
@@ -66,6 +75,9 @@ class ShotbackScreen extends StatelessWidget {
       appBar: AppBar(
           //Este AppBar incluye por defecto un leadign Button que nos permite "poppear" esta pantalla y volve a la anterior
           title: Text(this.shotback.title),
+          actions: [
+            IconButton(icon: Icon(Icons.edit), color: Colors.white, onPressed: () {})
+          ],
           backgroundColor: Colors.green),
       body: ListView(
         //Cuerpo de la pantalla
@@ -160,7 +172,7 @@ class ShotbackCard extends StatelessWidget {
                       //Contenedor del texto del titulo
                       margin: EdgeInsets.only(left: 10),
                       child: Text(
-                        shotback.title,
+                        this.shotback.title,
                         textAlign: TextAlign.left,
                       ),
                     )))
@@ -198,15 +210,3 @@ class Shotback {
 
 }
 
-// Image _openGallery(){
-
-//   File img;
-
-//   final pickedFile = ImagePicker().getImage(source: ImageSource.gallery);
-
-//   img = File(pickedFile.);
-  
-//     File imgFile= await img as File; 
-
-//     return Image.file(imgFile);
-// }
