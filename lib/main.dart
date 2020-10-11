@@ -1,10 +1,14 @@
+import 'dart:io';
+
+import 'package:ShotBack/image.dart';
 import 'package:flutter/material.dart';
 
 final String ejemplo =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lacus erat, scelerisque sit amet aliquet in, varius vitae diam. Vestibulum tempus ultrices justo, et scelerisque lectus tincidunt non. Aenean sit amet tortor et elit molestie rhoncus in eu purus. Etiam non sagittis lacus. Pellentesque hendrerit, risus ac volutpat cursus, lacus velit malesuada enim, eget ullamcorper velit elit consequat ante. Proin facilisis auctor augue eu bibendum. Quisque sed bibendum ipsum, ut commodo nunc. Pellentesque aliquet nisl nec diam ornare, in lobortis velit molestie. In ultricies purus non libero efficitur, id tempor magna maximus.";
 
 void main() {
-  runApp(MainScreen());
+  // runApp(MainScreen());
+  runApp(MyApp());
 }
 
 //Vista principal de la aplicacion.
@@ -20,8 +24,7 @@ class MainScreen extends StatelessWidget {
         body: ListView(   //El body se trata de un ListView de Cards que muestran una imagen y su titulo
           children: <Widget>[
             ShotbackCard(Shotback(
-              Image.network(
-                  "https://aws.traveler.es/prod/designs/v1/assets/1000x667/21250.jpg"),
+              Image.network("https://aws.traveler.es/prod/designs/v1/assets/1000x667/21250.jpg"),
               "Madrid no es",
               ejemplo,
                 DateTime.now(),
@@ -194,3 +197,16 @@ class Shotback {
       this.location]); //Parametros opcionales. El titulo por defecto es un string sin texto
 
 }
+
+// Image _openGallery(){
+
+//   File img;
+
+//   final pickedFile = ImagePicker().getImage(source: ImageSource.gallery);
+
+//   img = File(pickedFile.);
+  
+//     File imgFile= await img as File; 
+
+//     return Image.file(imgFile);
+// }
