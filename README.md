@@ -1,16 +1,2 @@
-# primer_acercamiento
-
-A new Flutter application.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# ShotBack
+This is a getting in touch Flutter proyect that consists on two views. The first shows a list of cards containing a bunch of images. Once you tap one, you get to the second view where the image is ampliated and its shown detailed information like location, date, a description, people you were with, etc...
