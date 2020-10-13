@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
       home: Scaffold(     //Scaffold que contiene el appBar y el body de la vista  
         backgroundColor: Colors.lime,
         appBar: AppBar(
-            title: Text("Galería de imágenes"), backgroundColor: Colors.green),
+            title: Center(child: Text("Shotback")), backgroundColor: Colors.green),
         body: ListView(   //El body se trata de un ListView de Cards que muestran una imagen y su titulo
           children: <Widget>[
             ShotbackCard(Shotback(
