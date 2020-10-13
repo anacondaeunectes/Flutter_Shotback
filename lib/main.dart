@@ -20,27 +20,36 @@ class MainScreen extends StatelessWidget {
         body: ListView(   //El body se trata de un ListView de Cards que muestran una imagen y su titulo
           children: <Widget>[
             ShotbackCard(Shotback(
-              Image.network(
-                  "https://aws.traveler.es/prod/designs/v1/assets/1000x667/21250.jpg"),
-              "Madrid no es",
+              Image.asset("assets/fuji.jpg"),
+              "Monte Fuji",
               ejemplo,
                 DateTime.now(),
-                "Japan"
+                "Tokio, Japon"
             )),
             ShotbackCard(Shotback(
-                Image.network(
-                    "https://static.vix.com/es/sites/default/files/styles/4x3/public/imj/p/paisajes-espectaculares-del-mundo-1.jpg"),
-                "Fuji",
+                Image.asset("assets/mountain.jpg"),
+                "Fiordo noruego",
                 ejemplo,
                 DateTime.now(),
-                "Japan")),
+                "Stavanger, Noruega")),
             ShotbackCard(Shotback(
-                Image.network(
-                    "https://aws.traveler.es/prod/designs/v1/assets/1000x667/21250.jpg"),
-                "Monte Fuji",
+                Image.asset("assets/saintMichel.jpg"),
+                "Mont Saint Michel",
                 ejemplo,
                 DateTime.now(),
-                "Japan"))
+                "Normandia, Francia")),
+            ShotbackCard(Shotback(
+                Image.asset("assets/murallaChina.jpg"),
+                "Muralla china",
+                ejemplo,
+                DateTime.now(),
+                "Pekin, China")),
+            ShotbackCard(Shotback(
+                Image.asset("assets/plazaObradoiro.jpg"),
+                "Plaza Obradoiro",
+                ejemplo,
+                DateTime.now(),
+                "Santiago de Compostela, España"))
           ],
         ),
       ),
@@ -173,9 +182,6 @@ class ShotbackCard extends StatelessWidget {
     );
   }
 }
-
-//https://aws.traveler.es/prod/designs/v1/assets/1000x667/21250.jpg
-//https://static.vix.com/es/sites/default/files/styles/4x3/public/imj/p/paisajes-espectaculares-del-mundo-1.jpg
 
 //Clase que representa los atributos de cada imagen
 class Shotback {
